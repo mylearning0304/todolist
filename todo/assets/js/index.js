@@ -1,6 +1,6 @@
 $("ul").on("click", "li", function(){
     
-   $(this).addClass("completed");
+   $(this).toggleClass("completed");
    
 });
 $("ul").on("click","span", function(e){
@@ -16,8 +16,11 @@ $("ul").on("click","span", function(e){
     if(e.which===13){
         var todotext = $(this).val();
         console.log(todotext);
-        $("ul").append("<li><span>L </span> "+todotext+"</li>");
+        $("ul").append("<li><span><i class='fa fa-trash'></i></span> "+todotext+"</li>");
         $(this).val(" ")
 
     }
+ });
+ $(".fa-plus-circle").click(function(){
+    $("input[type='text']").fadeToggle();
  });
